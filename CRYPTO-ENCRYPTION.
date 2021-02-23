@@ -1,0 +1,57 @@
+from tkinter import *
+
+def crypto():
+    x=cryptoparam.get()
+    d={"A":"Z",
+       "B":"Y",
+       "C":"X",
+       "D":"W",
+       "E":"V",
+       "F":"U",
+       "G":"T",
+       "H":"S",
+       "I":"R",
+       "J":"Q",
+       "K":"P",
+       "L":"O",
+       "M":"N",
+    
+       "Z":"A",
+       "Y":"B",
+       "X":"C",
+       "W":"D",
+       "V":"E",
+       "U":"F",
+       "T":"G",
+       "S":"H",
+       "R":"I",
+       "Q":"J",
+       "P":"K",
+       "O":"L",
+       "N":"M",
+
+
+
+       }
+   
+    l=[]
+    for i in x:
+        l.append(i)
+    for i in range(len(l)):
+        l[i]=d[l[i]]
+
+    w1=Tk()
+    w1.geometry("100x100")
+    l1=Label(w1,text=[i for i in l])
+    l1.grid(row=0,column=0)
+    w1.mainloop()
+w=Tk()
+w.geometry("100x100")
+l=Label(w,text="type your text")
+l.grid(row=0,column=0)
+cryptoparam=StringVar()
+x=Entry(w,textvariable=cryptoparam)
+x.grid(row=1,column=0)
+b=Button(w,text="create cipher text",command=crypto)
+b.grid(row=2,column=0)
+w.mainloop()
